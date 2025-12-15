@@ -19,22 +19,24 @@ const SETUP_STEPS = [
   "Clone repository and open world file",
   "Run simulation with default controller",
 ];
+// 👇 这里用 BASE 简化写法
+const BASE = import.meta.env.BASE_URL;
 
 // TODO: Replace with paths to your actual screenshots in /public/images/
 const SCREENSHOTS = [
   
 {
-    src: "${import.meta.env.BASE_URL}images/webots-scene.png",
+    src: `${BASE}images/webots-scene.png`,
     alt: "Webots kitchen simulation",
     caption: "Kitchen Environment Overview",
   },
   {
-    src: "${import.meta.env.BASE_URL}public/images/robot-arm.png",
+    src: `${BASE}public/images/robot-arm.png`,
     alt: "UR5e robot arm",
     caption: "UR5e robot arm picking up pot",
   },
   {
-    src: "${import.meta.env.BASE_URL}public/images/plate.png",
+    src: `${BASE}/images/plate.png`,
     alt: "plate",
     caption: "plate for serving",
   },
