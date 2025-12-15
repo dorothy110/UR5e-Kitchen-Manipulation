@@ -24,32 +24,32 @@ const SETUP_STEPS = [
 const SCREENSHOTS = [
   
 {
-    src: "${import.meta.env.BASE_URL}/images/webots-scene.png",
+    src: "${import.meta.env.BASE_URL}images/webots-scene.png",
     alt: "Webots kitchen simulation",
     caption: "Kitchen Environment Overview",
   },
   {
-    src: "${import.meta.env.BASE_URL}/public/images/robot-arm.png",
+    src: "${import.meta.env.BASE_URL}public/images/robot-arm.png",
     alt: "UR5e robot arm",
     caption: "UR5e robot arm picking up pot",
   },
   {
-    src: "${import.meta.env.BASE_URL}/public/images/plate.png",
+    src: "${import.meta.env.BASE_URL}public/images/plate.png",
     alt: "plate",
     caption: "plate for serving",
   },
   {
-    src: "${import.meta.env.BASE_URL}/public/images/cookware.png",
+    src: "${import.meta.env.BASE_URL}public/images/cookware.png",
     alt: "pot",
     caption: "pot for cooking",
   },
   {
-    src: "${import.meta.env.BASE_URL}/public/images/hot plate.png",
+    src: "${import.meta.env.BASE_URL}public/images/hot plate.png",
     alt: "hot plate",
     caption: "hot plate for heating",
   },  
   {
-    src: "${import.meta.env.BASE_URL}/public/images/obstacle.png",
+    src: "${import.meta.env.BASE_URL}public/images/obstacle.png",
     alt: "obstacle",
     caption: "obstacle for createting challenge",
   },  

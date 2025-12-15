@@ -4,17 +4,17 @@ import SimpleTextTable from "./SimpleTextTable";
 // TODO: Replace with paths to your actual chart images in /public/images/
 const CHARTS = [
   {
-    file: "${import.meta.env.BASE_URL}/public/images/velocity limit vs total time.png",
+    file: "${import.meta.env.BASE_URL}public/images/velocity limit vs total time.png",
     title: "Experiment 2 Result: velocity limit vs total time",
     description: "TODO: Describe trend and interpretation. Higher velocity limits result in faster task completion times.",
   },
   {
-    file: "${import.meta.env.BASE_URL}/public/images/velocity limit vs smooth.png",
+    file: "${import.meta.env.BASE_URL}public/images/velocity limit vs smooth.png",
     title: "Experiment 2 Result: velocity limit vs smooth",
     description: "TODO: Describe relation between velocity and smoothness. Smoothness decreases as velocity increases.",
   },
   {
-    file: "${import.meta.env.BASE_URL}/public/images/velocity limit vs accuracy.png",
+    file: "${import.meta.env.BASE_URL}public/images/velocity limit vs accuracy.png",
     title: "Experiment 2 Result: velocity limit vs accuracy",
     description: "TODO: Describe relation between velocity and smoothness. Smoothness decreases as velocity increases.",
   },
