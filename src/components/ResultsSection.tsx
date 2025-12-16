@@ -35,7 +35,7 @@ const VIDEOS = [
   {
     title: "Full Demo Run",
     driveUrl: "https://drive.google.com/file/d/1c04fcywyijKMAqOxIm_e-Q60JHLv5hBW/view?usp=sharing",
-    description: "TODO: Describe what the video shows. Complete manipulation task demonstration.",
+    description: " if you cannot access, please visit https://drive.google.com/file/d/1c04fcywyijKMAqOxIm_e-Q60JHLv5hBW/view?usp=sharing",
   }
 ];
 
