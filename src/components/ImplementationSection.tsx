@@ -26,12 +26,12 @@ const BASE = import.meta.env.BASE_URL;
 const SCREENSHOTS = [
   
 {
-    src: `${BASE}images/webots-scene.png`,
+    src: `${BASE}/images/webots-scene.png`,
     alt: "Webots kitchen simulation",
     caption: "Kitchen Environment Overview",
   },
   {
-    src: `${BASE}public/images/robot-arm.png`,
+    src: `${BASE}/images/robot-arm.png`,
     alt: "UR5e robot arm",
     caption: "UR5e robot arm picking up pot",
   },
@@ -41,17 +41,17 @@ const SCREENSHOTS = [
     caption: "plate for serving",
   },
   {
-    src: "${import.meta.env.BASE_URL}public/images/cookware.png",
+    src: `${BASE}/images/cookware.png`,
     alt: "pot",
     caption: "pot for cooking",
   },
   {
-    src: "${import.meta.env.BASE_URL}public/images/hot plate.png",
+    src: `${BASE}/images/hot plate.png`,
     alt: "hot plate",
     caption: "hot plate for heating",
   },  
   {
-    src: "${import.meta.env.BASE_URL}public/images/obstacle.png",
+    src: `${BASE}/images/obstacle.png`,
     alt: "obstacle",
     caption: "obstacle for createting challenge",
   },  
