@@ -1,6 +1,6 @@
 import { BarChart3, Video, FileText, MessageSquare } from "lucide-react";
 import SimpleTextTable from "./SimpleTextTable";
-
+const BASE = import.meta.env.BASE_URL;
 // TODO: Replace with paths to your actual chart images in /public/images/
 const CHARTS = [
   {
