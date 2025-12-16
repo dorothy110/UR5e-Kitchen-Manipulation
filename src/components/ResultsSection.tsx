@@ -34,19 +34,9 @@ Velocity Limit (rad/s),Task Time (s),Smoothness Score
 const VIDEOS = [
   {
     title: "Full Demo Run",
-    driveUrl: "https://drive.google.com/file/d/YOUR_VIDEO_ID/preview",
+    driveUrl: "https://drive.google.com/file/d/1c04fcywyijKMAqOxIm_e-Q60JHLv5hBW/view?usp=sharing",
     description: "TODO: Describe what the video shows. Complete manipulation task demonstration.",
-  },
-  {
-    title: "Low Velocity Experiment",
-    driveUrl: "https://drive.google.com/file/d/YOUR_VIDEO_ID/preview",
-    description: "TODO: Describe this condition. Robot operating at 0.05 rad/s velocity limit.",
-  },
-  {
-    title: "High Velocity Experiment",
-    driveUrl: "https://drive.google.com/file/d/YOUR_VIDEO_ID/preview",
-    description: "TODO: Describe this condition. Robot operating at 0.40 rad/s velocity limit.",
-  },
+  }
 ];
 
 export default function ResultsSection() {

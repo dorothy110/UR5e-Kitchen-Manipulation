@@ -3,10 +3,9 @@ import { Box, Settings, Image as ImageIcon, CheckCircle, CookingPot, Flame, Uten
 // TODO: Replace with your actual system components
 const SYSTEM_COMPONENTS = [
   { icon: "🤖", text: "UR5e 6-DOF Robotic Arm" },
-  { icon: "📷", text: "RGB Camera Sensor" },
   { icon: "🐍", text: "Python Controller Scripts" },
   { icon: "⚙️", text: "Webots Physics Engine" },
-  { icon: "🍳", text: "Pot Object with Gripper Handle" },
+  { icon: "🍳", text: "Pot Object with Gripper Handle with red ball locator" },
   { icon: "🔥", text: "Hotplate with Heat Simulation" },
   { icon: "🍽️", text: "Serving Plate Target" },
   { icon: "🧱", text: "Kitchen Counter Surface" },
@@ -16,8 +15,9 @@ const SYSTEM_COMPONENTS = [
 const SETUP_STEPS = [
   "Webots R2025a or later",
   "Python 3.11 with NumPy",
-  "Clone repository and open world file",
+  "Open world file: hw2_ur5e.wbt",
   "Run simulation with default controller",
+  "Raw Experiment reports: experiment_log under folder controller",
 ];
 // 👇 这里用 BASE 简化写法
 const BASE = import.meta.env.BASE_URL;
