@@ -1,33 +1,24 @@
 import { FlaskConical, Target, BarChart3, CookingPot, Flame, Timer } from "lucide-react";
 
-// TODO: Replace with your actual experiment details
+// TODO: Replace with your actual experiment detail
 const EXPERIMENTS = [
   {
-    name: "Velocity Limit vs Task Time",
-    hypothesis: "Lower joint velocity limits increase the total time to complete the pot→hotplate→plate sequence.",
-    independentVariables: ["Joint velocity limit (rad/s)"],
-    dependentVariables: ["Total task completion time"],
-    metrics: ["Time from pot pickup to plate placement (seconds)", "Number of trajectory segments"],
-    notes: "TODO: Replace with actual experiment details and methodology.",
+    name: "IK Damping λ ",
+    Hypothesis: "Damping improves numerical stability",
+    independentVariables: ["IK damping (λ), λ ∈ {0, 0.001, 0.01, 0.05, 0.1}"],
+    dependentVariables: ["End-effector error at the plate; Smoothness of the trajectory"],
+    KF: ["λ = 0 has extremely high accuracy (~10⁻⁷ m);λ ≥ 0.01 fails to converge within the fixed iteration limit → large errors (~0.65 m);Smoothness barely changes with λ"],
+    notes: "Evaluate how damping affects the stability and accuracy of IK. Damping makes the Jacobian inverse more conservative. With limited IK iterations, large damping prevents the solver from reaching the target. In this task, IK damping hurts performance instead of helping.",
     icon: Timer,
   },
   {
-    name: "Velocity Limit vs Motion Smoothness",
-    hypothesis: "Higher velocity limits reduce motion smoothness, risking pot contents spillage.",
-    independentVariables: ["Joint velocity limit (rad/s)"],
-    dependentVariables: ["Motion smoothness metric"],
-    metrics: ["Average joint velocity change per timestep", "Jerk magnitude during pot transport"],
-    notes: "TODO: Replace with actual experiment details and methodology.",
+    name: "Joint Velocity Limit",
+    Hypothesis: "Speed affects time and smoothness.",
+    independentVariables: ["TRAJ_MAX_VEL = {0.05, 0.1, 0.2, 0.3, 0.5, 1.0}"],
+    dependentVariables: ["Total task time; Average joint step change (smoothness);End-effector accuracy"],
+    KF: ["Higher velocity → dramatically shorter task time, Higher velocity → less smooth motion (larger joint changes), Accuracy remains mostly constant (dominated by IK result)"],
+    notes: "Study the effect of joint speed constraints on total time, smoothness, and precision. A clear real-world trade-off: speed vs stability.",
     icon: CookingPot,
-  },
-  {
-    name: "Heating Duration vs Task Efficiency",
-    hypothesis: "Optimal heating duration balances cooking requirements with total cycle time.",
-    independentVariables: ["Hotplate heating duration (seconds)"],
-    dependentVariables: ["Task efficiency", "Total cycle time"],
-    metrics: ["Overall task time", "Idle time ratio"],
-    notes: "TODO: Replace with actual experiment details if applicable.",
-    icon: Flame,
   },
 ];
 
@@ -70,7 +61,7 @@ export default function ExperimentsSection() {
                       Hypothesis
                     </span>
                   </div>
-                  <p className="text-muted-foreground text-sm">{experiment.hypothesis}</p>
+                  <p className="text-muted-foreground text-sm">{experiment.Hypothesis}</p>
                 </div>
 
                 {/* Metrics */}
@@ -78,11 +69,11 @@ export default function ExperimentsSection() {
                   <div className="flex items-center gap-2 mb-2">
                     <BarChart3 className="w-4 h-4 text-primary" />
                     <span className="font-display text-sm font-medium text-foreground">
-                      Metrics
+                      Key Finding
                     </span>
                   </div>
                   <ul className="text-muted-foreground text-sm space-y-1">
-                    {experiment.metrics.map((metric, i) => (
+                    {experiment.KF.map((metric, i) => (
                       <li key={i}>• {metric}</li>
                     ))}
                   </ul>
@@ -104,7 +95,7 @@ export default function ExperimentsSection() {
                   </div>
                   <div>
                     <span className="font-display text-xs font-medium text-primary uppercase tracking-wide">
-                      Dependent Variables
+                      Metrics
                     </span>
                     <ul className="mt-2 space-y-1">
                       {experiment.dependentVariables.map((v, i) => (

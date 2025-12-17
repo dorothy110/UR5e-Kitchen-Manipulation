@@ -2,34 +2,31 @@ import { Eye, Compass, Route, Cpu, CookingPot, Flame, UtensilsCrossed } from "lu
 
 const APPROACHES = [
   {
-    icon: Eye,
-    title: "Perception",
-    // TODO: Describe our perception algorithm (e.g., HSV detection, object recognition).
-    description:
-      "HSV-based color detection identifies the pot, hotplate, and plate in the kitchen scene. The perception pipeline extracts object positions for precise manipulation.",
-  },
-  {
     icon: Compass,
-    title: "Kinematics & Control",
-    // TODO: Explain control approach (Jacobian-based, velocity control, inverse kinematics).
+    title: "Coordinate Frames & Kinematics",
     description:
-      "Jacobian-based velocity control enables smooth arm movements. Inverse kinematics computes joint configurations for reaching the pot, hotplate, and serving plate.",
-  },
-  {
-    icon: Route,
-    title: "Motion Planning",
-    // TODO: Describe motion planning approach (RRT, potential fields, etc.).
-    description:
-      "Task-space planning generates collision-free trajectories between counter, hotplate, and plate positions. Waypoints ensure safe navigation around kitchen obstacles.",
+      "Key task positions are first identified in the Webots world frame and then converted into the UR5e base frame. Forward kinematics is used to compute the end-effector position, ensuring consistency between the simulator and the inverse kinematics solver.",
   },
   {
     icon: Cpu,
-    title: "State Machine",
-    // TODO: Describe the high-level task controller or state machine.
+    title: "Inverse Kinematics with Damping",
     description:
-      "A finite state machine orchestrates the cooking sequence: pick pot → place on hotplate → wait for heating → transfer contents to plate. States transition based on gripper and timer feedback.",
+      "A Jacobian-based Newton inverse kinematics solver computes joint configurations for each task target. Optional damping is added to study its effect on numerical stability and convergence under a fixed iteration budget.",
+  },
+  {
+    icon: Route,
+    title: "Trajectory Generation & Velocity Control",
+    description:
+      "Joint-space trajectories are generated using cubic time scaling between waypoints. A configurable joint velocity limit controls execution speed, enabling systematic evaluation of efficiency versus motion smoothness.",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Experiment Automation & Logging",
+    description:
+      "The controller automatically logs end-effector accuracy, joint smoothness, and total task time at predefined measurement points. This enables clean, repeatable experiments across different control parameters.",
   },
 ];
+
 
 export default function TechnicalApproachSection() {
   return (
@@ -41,8 +38,9 @@ export default function TechnicalApproachSection() {
           </h2>
           <p className="section-subtitle mx-auto">
             {/* TODO: Replace with a brief overview of your technical methodology. */}
-            My approach combines computer vision, kinematics, and planning to enable 
-            autonomous manipulation in the Webots simulation environment.
+  The controller integrates kinematics, inverse kinematics, and trajectory control
+  into a single automated system that supports controlled experimental evaluation.
+
           </p>
         </div>
 

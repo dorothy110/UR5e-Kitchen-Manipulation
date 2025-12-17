@@ -59,11 +59,12 @@ export default function OverviewSection() {
           {/* Abstract */}
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8 animate-slide-up animation-delay-100">
             {/* TODO: Replace this abstract with the real project summary. */}
-            This project implements a UR5e-style robotic arm in the Webots simulation 
-            environment to perform kitchen manipulation tasks. The robot picks up a pot 
-            from a counter, places it on a hotplate, waits during a short heating stage, 
-            then transfers the contents to a plate — demonstrating perception, motion 
-            planning, and precise control in a cooking scenario.
+            Overview: This project investigates the behavior of inverse kinematics and joint-level control in a small UR5e kitchen manipulation task simulated in Webots. 
+            The robot is required to move a pot from a table to a hotplate and then reposition above a plate, forming a simple but complete manipulation pipeline. 
+            Using a Newton-based inverse kinematics solver, smooth trajectory generation, and joint velocity constraints, 
+            the project evaluates how control parameters influence accuracy, smoothness, and execution time. 
+            Two experiments are conducted to study the effects of IK damping and joint velocity limits. 
+            The results highlight important trade-offs between numerical stability, efficiency, and motion quality, demonstrating how kinematics and control concepts interact in an end-to-end robotic system.
           </p>
 
           {/* CTA Buttons */}

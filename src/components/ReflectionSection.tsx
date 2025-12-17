@@ -3,42 +3,42 @@ import { Lightbulb, Rocket } from "lucide-react";
 // TODO: Replace with your actual lessons learned
 const LESSONS_LEARNED = [
   {
-    title: "Perception Calibration",
-    description: "IK damping interacts strongly with iteration limits",
+    title: "IK Convergence and Damping",
+    description: "IK damping interacts strongly with iteration limits: adding damping without increasing iterations can prevent the solver from fully converging to the target.",
   },
   {
-    title: "Velocity Control Trade-offs",
-    description: "Balancing speed and precision required iterative experimentation. TODO: Describe your control challenges.",
+    title: "Speed vs Smoothness Trade-off",
+    description: "Joint velocity limits create a clear trade-off between efficiency and smoothness: higher speeds reduce task time but increase per-step joint motion.",
   },
   {
-    title: "Simulation vs Reality Gap",
-    description: "Webots physics approximations affect trajectory accuracy. TODO: Describe any simulation-related insights.",
+    title: "End-to-End Robot Control Pipeline",
+    description: "Combining forward kinematics, inverse kinematics, trajectory generation, and automatic logging results in a realistic and reusable robotic workflow.",
   },
   {
-    title: "State Machine Design",
-    description: "Robust error handling was essential for reliable task completion. TODO: Describe your software architecture lessons.",
+    title: "Value of Automated Experiments",
+    description: "Building a small automated experiment system enables clean, repeatable, and directly comparable performance evaluations.",
   },
 ];
 
 // TODO: Replace with your actual future work ideas
 const FUTURE_WORK = [
   {
-    title: "Multi-Object Manipulation",
-    description: "Extend the system to handle multiple objects with priority-based planning. TODO: Describe your extension ideas.",
+    title: "Adaptive IK Parameter Tuning",
+    description:
+      "Extend the inverse kinematics solver with adaptive damping or iteration control, allowing the system to automatically balance convergence speed and numerical stability based on task conditions.",
   },
   {
-    title: "Learning-Based Control",
-    description: "Incorporate reinforcement learning for adaptive velocity control. TODO: Describe potential ML improvements.",
+    title: "Obstacle-Aware Motion Planning",
+    description:
+      "Integrate sampling-based planners such as RRT to generate collision-aware joint trajectories, enabling safe manipulation in more crowded and dynamic kitchen environments.",
   },
   {
-    title: "Real Hardware Deployment",
-    description: "Validate the algorithms on a physical UR5e robot. TODO: Describe hardware validation plans.",
-  },
-  {
-    title: "Improved Perception",
-    description: "Implement deep learning-based object detection for robustness. TODO: Describe perception improvements.",
+    title: "Closed-Loop Feedback Control",
+    description:
+      "Incorporate real-time end-effector feedback to correct execution errors during motion, reducing reliance on open-loop trajectory execution and improving robustness.",
   },
 ];
+
 
 export default function ReflectionSection() {
   return (

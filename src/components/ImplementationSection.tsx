@@ -2,7 +2,7 @@ import { Box, Settings, Image as ImageIcon, CheckCircle, CookingPot, Flame, Uten
 
 // TODO: Replace with your actual system components
 const SYSTEM_COMPONENTS = [
-  { icon: "🤖", text: "UR5e 6-DOF Robotic Arm" },
+  { icon: "🤖", text: "UR5e 6-DOF Robotic Arm without gripper" },
   { icon: "🐍", text: "Python Controller Scripts" },
   { icon: "⚙️", text: "Webots Physics Engine" },
   { icon: "🍳", text: "Pot Object with Gripper Handle with red ball locator" },
@@ -18,6 +18,7 @@ const SETUP_STEPS = [
   "Open world file: hw2_ur5e.wbt",
   "Run simulation with default controller",
   "Raw Experiment reports: experiment_log under folder controller",
+  "Although this UR5e model(same material we used in HW2) does not include a physical gripper, this does not affect the goals of our experiments, which focus on inverse kinematics, trajectory smoothness, and control performance rather than grasp mechanics.",
 ];
 // 👇 这里用 BASE 简化写法
 const BASE = import.meta.env.BASE_URL;
